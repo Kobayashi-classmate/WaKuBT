@@ -20,6 +20,7 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 use Jeffgreco13\FilamentBreezy\BreezyCore;
 use Illuminate\Validation\Rules\Password;
+use \Croustibat\FilamentJobsMonitor\FilamentJobsMonitorPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -77,7 +78,8 @@ class AdminPanelProvider extends PanelProvider
                     )
                     ->enableBrowserSessions(condition: true) // Enable the Browser Sessions feature (default = true)
                     ->enableSanctumTokens(),
-                \BezhanSalleh\FilamentExceptions\FilamentExceptionsPlugin::make()
+                \BezhanSalleh\FilamentExceptions\FilamentExceptionsPlugin::make(),
+                FilamentJobsMonitorPlugin::make(),
             ])
             ->resources([
                 config('filament-logger.activity_resource')
