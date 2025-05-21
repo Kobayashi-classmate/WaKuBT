@@ -77,6 +77,9 @@ class AdminPanelProvider extends PanelProvider
                     )
                     ->enableBrowserSessions(condition: true) // Enable the Browser Sessions feature (default = true)
                     ->enableSanctumTokens()
+            ])
+            ->resources([
+                config('filament-logger.activity_resource')
             ]);
     }
 }
