@@ -55,7 +55,7 @@ return [
             'sort' => 10,
             'label' => 'Email Templates',
             'icon' => 'heroicon-o-envelope',
-            'group' => 'Content',
+            'group' => 'E-mail',
             'cluster' => false,
             'position' => SubNavigationPosition::Top
         ],
@@ -63,7 +63,7 @@ return [
             'sort' => 20,
             'label' => 'Email Template Themes',
             'icon' => 'heroicon-o-paint-brush',
-            'group' => 'Content',
+            'group' => 'E-mail',
             'cluster' => false,
             'position' => SubNavigationPosition::Top
         ],

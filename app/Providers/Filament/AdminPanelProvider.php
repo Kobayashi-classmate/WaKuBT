@@ -24,6 +24,7 @@ use Croustibat\FilamentJobsMonitor\FilamentJobsMonitorPlugin;
 use Visualbuilder\EmailTemplates\EmailTemplatesPlugin;
 use BezhanSalleh\FilamentExceptions\FilamentExceptionsPlugin;
 use App\Filament\Resources\Auth\RequestPasswordReset;
+use RickDBCN\FilamentEmail\FilamentEmail;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -84,6 +85,7 @@ class AdminPanelProvider extends PanelProvider
                 FilamentExceptionsPlugin::make(),
                 FilamentJobsMonitorPlugin::make(),
                 EmailTemplatesPlugin::make(),
+                FilamentEmail::make(),
             ])
             ->resources([
                 config('filament-logger.activity_resource')
