@@ -20,7 +20,10 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 use Jeffgreco13\FilamentBreezy\BreezyCore;
 use Illuminate\Validation\Rules\Password;
-use \Croustibat\FilamentJobsMonitor\FilamentJobsMonitorPlugin;
+use Croustibat\FilamentJobsMonitor\FilamentJobsMonitorPlugin;
+use Visualbuilder\EmailTemplates\EmailTemplatesPlugin;
+use BezhanSalleh\FilamentExceptions\FilamentExceptionsPlugin;
+use App\Filament\Resources\Auth\RequestPasswordReset;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -78,11 +81,13 @@ class AdminPanelProvider extends PanelProvider
                     )
                     ->enableBrowserSessions(condition: true) // Enable the Browser Sessions feature (default = true)
                     ->enableSanctumTokens(),
-                \BezhanSalleh\FilamentExceptions\FilamentExceptionsPlugin::make(),
+                FilamentExceptionsPlugin::make(),
                 FilamentJobsMonitorPlugin::make(),
+                EmailTemplatesPlugin::make(),
             ])
             ->resources([
                 config('filament-logger.activity_resource')
-            ]);
+            ])
+            ->passwordReset(RequestPasswordReset::class);
     }
 }
