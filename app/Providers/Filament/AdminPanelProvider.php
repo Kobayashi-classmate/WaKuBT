@@ -76,7 +76,8 @@ class AdminPanelProvider extends PanelProvider
                         force: false, // force the user to enable 2FA before they can use the application (default = false)
                     )
                     ->enableBrowserSessions(condition: true) // Enable the Browser Sessions feature (default = true)
-                    ->enableSanctumTokens()
+                    ->enableSanctumTokens(),
+                \BezhanSalleh\FilamentExceptions\FilamentExceptionsPlugin::make()
             ])
             ->resources([
                 config('filament-logger.activity_resource')
