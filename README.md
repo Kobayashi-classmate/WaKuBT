@@ -2,7 +2,7 @@
 
 This is a project that will never be completed, hahaha ;), it uses these contents:
 
-- [Laravel v12.0.8](https://laravel.com/docs/12.x/releases)+
+- [Laravel v11.6.1](https://laravel.com/docs/12.x/releases)+
 - [Filament v3.3](https://filamentphp.com/docs/3.x/panels/installation)+
 - [Livewire v3.6.3](https://laravel-livewire.com/)+
 - PHP v8.2.27+ (fileinfo, exif)
